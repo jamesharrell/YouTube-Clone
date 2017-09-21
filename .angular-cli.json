@@ -19,8 +19,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/videogular2/fonts/videogular.css",
         "styles.css",
         "../semantic/dist/semantic.min.css"
+ 
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
