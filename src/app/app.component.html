@@ -1,32 +1,3 @@
-<h1 class="ui header">Homepage - Recent Videos</h1>
-<p>Feed of videos here...</p>
+<app-list-videos></app-list-videos>
+<app-video-player></app-video-player>>
 
-<vg-player>
-    <vg-overlay-play></vg-overlay-play>
-    <vg-buffering></vg-buffering>
-
-    <vg-controls>
-        <vg-play-pause></vg-play-pause>
-        <vg-playback-button></vg-playback-button>
-
-        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
-
-        <vg-scrub-bar>
-            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-        </vg-scrub-bar>
-
-        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-
-        <vg-track-selector></vg-track-selector>
-        <vg-mute></vg-mute>
-        <vg-volume></vg-volume>
-
-        <vg-fullscreen></vg-fullscreen>
-    </vg-controls>
-
-    <video [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
-        <source src="/assets/videos/DO WHAT YOU CAN'T.mp4" type="video/mp4">
-    </video>
-</vg-player>
