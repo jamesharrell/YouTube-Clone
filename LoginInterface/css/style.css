@@ -1,0 +1,35 @@
+
+.container {
+  width: 90% ;
+  min-width: 350px;
+  display: block;
+  margin: auto;
+}
+
+h1 {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.field-sec {
+  width: 25%;
+  min-width: 400px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.field-sec label {
+  font-weight: bold;
+}
+.field-sec input {
+  padding: 8px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+#login , #register , #logout {
+  margin: auto;
+  display: block;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+}
