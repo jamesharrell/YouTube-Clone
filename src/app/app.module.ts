@@ -14,8 +14,9 @@ import {Routes, RouterModule} from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   {
-    path: '',
+    path: 'home',
     component: ListVideosComponent,
     data: { title: 'Home Page' }
   },
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]
