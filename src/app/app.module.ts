@@ -10,6 +10,22 @@ import {VgBufferingModule} from 'videogular2/buffering';
 import { VideopageComponent } from './videopage/videopage.component';
 import { ListVideosComponent } from './list-videos/list-videos.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
+import {Routes, RouterModule} from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: ListVideosComponent,
+    data: { title: 'Home Page' }
+  },
+  {
+    path: 'videos',
+    component: VideopageComponent,
+    data: { title: 'Video Player' }
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -17,13 +33,15 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
     VideopageComponent,
     ListVideosComponent,
     VideoPlayerComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
-    VgBufferingModule
+    VgBufferingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
