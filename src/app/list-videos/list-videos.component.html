@@ -1,14 +1,20 @@
-<div class="ui one column centered grid">
-  <div class="column">
-    <h1 style="text-align: center; font-size: 50px" > YouTube Two </h1>
-    <h1 style="text-align: center; font-size: 20px" > Because Why Stop At One? </h1>
+<div class='container'>
+  <div class="page-header">
+    <h1>Recent Videos
+      <img
+        style="float: right;"
+        *ngIf="loading"
+        src='../../assets/images/loading.gif'/>
+    </h1>
+    <p></p>
+    <p></p>
+  </div>
+  <div class="row">
+    <div class="ui grid">
+      <app-search-result
+        *ngFor="let result of results"
+        [result]="result">
+      </app-search-result>
+    </div>
   </div>
 </div>
-
-
-<h1 style="font-size: 20px">
-  <a href="/#/videos" class="ui medium image">
-    <img src="/assets/images/thumbnail.png">
-    <p>DO WHAT YOU CAN'T</p>
-  </a>
-</h1>

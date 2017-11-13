@@ -12,6 +12,12 @@ import { ListVideosComponent } from './list-videos/list-videos.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import {Routes, RouterModule} from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+
+import { youTubeSearchInjectables } from './list-videos/list-videos.injectables'
+import { HttpModule} from '@angular/http';
+import { YouTubeSearchService } from './list-videos/list-videos.service'
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -35,6 +41,7 @@ const appRoutes: Routes = [
     ListVideosComponent,
     VideoPlayerComponent,
     PageNotFoundComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,9 +49,10 @@ const appRoutes: Routes = [
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [],
+  providers: [youTubeSearchInjectables],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
