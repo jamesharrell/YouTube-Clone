@@ -13,6 +13,6 @@ export class SearchResult {
     this.thumbnailUrl    = obj && obj.thumbnailUrl   || null;
     this.playCount       = obj && obj.playCount      || null;
     this.videoUrl        = obj && obj.videoUrl       ||
-      `https://ytclone.jamesharrell.me/#/watch?v=${this.id}`;
+      `/video/${this.id}`;
   }
 }

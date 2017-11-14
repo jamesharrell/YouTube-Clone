@@ -2,8 +2,7 @@
 
   <div class="caption">
     <h5>{{result.title}}</h5>
-    <a href="{{result.videoUrl}}"
-          class="btn btn-default" role="button">
+    <a [routerLink]="[result.videoUrl]" class="btn btn-default" role="button">
       <div class="thumbnail">
         <img src="./../../assets/images/test.jpg">
       </div>

@@ -1,14 +1,13 @@
-
 <div class="ui container">
   <div class = "ui equal width grid">
     <div class="row">
       <div class="ui red fixed inverted menu">
         <div class="ui container">
-          <a href="/#/home" class="item">
+          <a [routerLink]="['/home']" class="item">
             <img class="logo" src="assets/images/Yt2logo.png">
           </a>
-          <a href="/#/profile" class="item">Profile</a>
-          <a href="/#/subscriptions" class="item">Subscriptions</a>
+          <a [routerLink]="['/profile']" class="item">Profile</a>
+          <a [routerLink]="['/about']" class="item">About</a>
           <div class="ui search" style="padding-left: 5px">
             <input class="prompt" type="text" placeholder="Search for videos..." style="height: 70%; margin-top: 8px">
           </div>

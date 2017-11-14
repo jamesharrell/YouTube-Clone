@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     data: { title: 'Home Page' }
   },
   {
-    path: 'videos',
+    path: 'video/:id',
     component: VideopageComponent,
     data: { title: 'Video Player' }
   },

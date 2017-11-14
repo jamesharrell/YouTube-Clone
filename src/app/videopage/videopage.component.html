@@ -1,15 +1,15 @@
 <div class="row"></div>
-<div class="row">
-<div class="ui two column centered grid">
-  <div class="column">
-    <h1 style="text-align: center; font-size: 50px" > Do What You Can't </h1>
-    <app-video-player></app-video-player>
-    <br>
-    <i class="calendar icon" style="padding: 10px"></i> October 27, 2017
-    <i class="id badge icon" style="padding: 10px"></i> James Harrell
-    <br>
-    <br>
-    To the haters, the doubters, my 7th grade Vice Principal, to everyone who's ever told anyone with a dream they can't - this video's for you.
+<div class="row" *ngIf="results">
+  <div class="ui two column centered grid">
+    <div class="column">
+      <h5 style="text-align: center; font-size: 50px">{{results[videoID-1].title}}</h5>
+      <app-video-player [videoID]="videoID"></app-video-player>
+      <br>
+      <i class="calendar icon" style="padding: 10px"></i> October 27, 2017
+      <i class="id badge icon" style="padding: 10px"></i> James Harrell
+      <br>
+      <br>
+      {{results[videoID-1].description}}
+    </div>
   </div>
-</div>
 </div>
