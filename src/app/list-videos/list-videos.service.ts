@@ -17,7 +17,7 @@ import 'rxjs/add/operator/map';
   Note that if you do use this API key, it will only work if the URL in
   your browser is "localhost"
 */
-export const YOUTUBE_API_URL = 'http://localhost:3000/videos';
+export const YOUTUBE_API_URL = 'http://ytclone.jamesharrell.me:3000/videos';
 
 @Injectable()
 export class YouTubeSearchService {
