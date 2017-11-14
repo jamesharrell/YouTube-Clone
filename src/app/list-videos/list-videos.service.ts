@@ -36,6 +36,7 @@ export class YouTubeSearchService {
             id: item.id,
             title: item.title,
             description: item.description,
+            playCount: item.playCount,
             thumbnailUrl: 'null'
             // thumbnailUrl: item.snippet.thumbnails.high.url
           });
