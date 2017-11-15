@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { YouTubeSearchService } from '../list-videos/list-videos.service';
-import { SearchResult } from '../search-result/search-result.model';
+import {Component, OnInit} from '@angular/core';
+import {YouTubeSearchService} from '../list-videos/list-videos.service';
+import {SearchResult} from '../search-result/search-result.model';
+import { Router } from '@angular/router';
+
 declare var $: any;
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -9,11 +12,14 @@ declare var $: any;
 })
 export class SearchBarComponent implements OnInit {
   results: SearchResult[];
-  constructor(private searchService: YouTubeSearchService) { }
+  videoSelection;
+  prevTrig: boolean;
+  constructor(private searchService: YouTubeSearchService, public router: Router) {
+  }
 
   ngOnInit() {
 
-
+    this.prevTrig = false;
     this.searchService.search().subscribe(
       responseCol => {
         this.updateResults(responseCol);
@@ -25,8 +31,17 @@ export class SearchBarComponent implements OnInit {
         });
       });
   }
-updateResults(results: SearchResult[]): void {
-  this.results = results;
-}
 
+  updateResults(results: SearchResult[]): void {
+    this.results = results;
+  }
+
+  onSelection() {
+    if (this.prevTrig) {
+      this.videoSelection = $('.ui.search').search('get result');
+      // console.log('Selected: ' + this.videoSelection.title);
+      this.router.navigate(['/video/', this.videoSelection.id]);
+    }
+    this.prevTrig = true;
+  }
 }
