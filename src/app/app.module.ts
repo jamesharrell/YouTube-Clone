@@ -16,6 +16,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
 
 import { youTubeSearchInjectables } from './list-videos/list-videos.injectables';
 import { HttpModule} from '@angular/http';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 const appRoutes: Routes = [
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     VideoPlayerComponent,
     PageNotFoundComponent,
     SearchResultComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
