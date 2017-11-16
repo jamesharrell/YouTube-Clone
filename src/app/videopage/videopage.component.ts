@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute } from '@angular/router';
 import { SearchResult } from '../search-result/search-result.model';
 import { YouTubeSearchService } from '../list-videos/list-videos.service';
+declare var $: any;
 @Component({
   selector: 'app-videopage',
   templateUrl: './videopage.component.html',
@@ -15,6 +16,7 @@ export class VideopageComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("here");
     this.searchService.search().subscribe(
       responseCol => {
         this.updateResults(responseCol);
