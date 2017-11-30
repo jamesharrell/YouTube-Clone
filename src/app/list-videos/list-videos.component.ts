@@ -20,7 +20,6 @@ export class ListVideosComponent implements OnInit {
   }
   updateResults(results: SearchResult[]): void {
     this.results = results;
-    console.log(results)
   }
 
 }

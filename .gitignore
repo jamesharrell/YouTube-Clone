@@ -38,3 +38,6 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+src/assets/videos/1.mp4
+src/assets/videos/2.mp4
+src/assets/videos/3.mp4

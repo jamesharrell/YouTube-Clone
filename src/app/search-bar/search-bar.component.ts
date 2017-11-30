@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {YouTubeSearchService} from '../list-videos/list-videos.service';
-import {SearchResult} from '../search-result/search-result.model';
+import { Component, OnInit } from '@angular/core';
+import { YouTubeSearchService } from '../list-videos/list-videos.service';
+import { SearchResult } from '../search-result/search-result.model';
 import { Router } from '@angular/router';
 
 declare var $: any;
@@ -13,13 +13,13 @@ declare var $: any;
 export class SearchBarComponent implements OnInit {
   results: SearchResult[];
   videoSelection;
-  prevTrig: boolean;
+  shouldSearch: boolean;
   constructor(private searchService: YouTubeSearchService, public router: Router) {
   }
 
   ngOnInit() {
 
-    this.prevTrig = false;
+    this.shouldSearch = false;
     this.searchService.search().subscribe(
       responseCol => {
         this.updateResults(responseCol);
@@ -35,13 +35,17 @@ export class SearchBarComponent implements OnInit {
   updateResults(results: SearchResult[]): void {
     this.results = results;
   }
-
+  onTyping() {
+    this.shouldSearch = true;
+    console.log('typing');
+  }
   onSelection() {
-    if (this.prevTrig) {
+    if (this.shouldSearch) {
       this.videoSelection = $('.ui.search').search('get result');
-      // console.log('Selected: ' + this.videoSelection.title);
+      console.log(this.videoSelection);
       this.router.navigate(['/video/', this.videoSelection.id]);
+      this.shouldSearch = false;
     }
-    this.prevTrig = true;
+    $('.ui.search').search('set value', '');
   }
 }
