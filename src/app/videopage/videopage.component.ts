@@ -16,7 +16,6 @@ export class VideopageComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("here");
     this.searchService.search().subscribe(
       responseCol => {
         this.updateResults(responseCol);
