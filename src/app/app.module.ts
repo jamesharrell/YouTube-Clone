@@ -17,19 +17,34 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { youTubeSearchInjectables } from './list-videos/list-videos.injectables';
 import { HttpModule} from '@angular/http';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { LoginComponent } from './login/login.component';
+import { ProtectedComponent } from './protected/protected.component';
 
+import { LoggedInGuard } from './logged-in.guard';
+import { AUTH_PROVIDERS } from './auth.service';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   {
     path: 'home',
     component: ListVideosComponent,
-    data: { title: 'Home Page' }
+    data: { title: 'Home Page' },
+    canActivate: [ LoggedInGuard ]
   },
   {
     path: 'video/:id',
     component: VideopageComponent,
-    data: { title: 'Video Player' }
+    data: { title: 'Video Player' },
+    canActivate: [ LoggedInGuard ]
+  },
+  { 
+    path: 'login', 
+    component: LoginComponent
+  },
+  {
+    path: 'protected',
+    component: ProtectedComponent,
+    canActivate: [ LoggedInGuard ]
   },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -43,6 +58,8 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     SearchResultComponent,
     SearchBarComponent,
+    LoginComponent,
+    ProtectedComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +70,12 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [youTubeSearchInjectables],
+  providers: [
+    youTubeSearchInjectables,
+    AUTH_PROVIDERS,
+    LoggedInGuard
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

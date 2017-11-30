@@ -37,7 +37,6 @@ export class SearchBarComponent implements OnInit {
   }
   onTyping() {
     this.shouldSearch = true;
-    console.log('typing');
   }
   onSelection() {
     if (this.shouldSearch) {
