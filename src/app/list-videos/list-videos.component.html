@@ -1,20 +1,18 @@
-<div class='container'>
-        <app-search-bar></app-search-bar>
-  <div class="page-header">
-    <h1><a class="ui label">Recent Videos</a>
-      <img
-        style="float: right;"
-        *ngIf="loading"
-        src='../../assets/images/loading.gif'/>
-    </h1>
+<div class="ui three column grid">
+  <div class="row">
+    <app-search-bar></app-search-bar>
+  </div>
+  <div class="column">
+    <div class="page-header">
+      <h1>
+        <a class="ui label">Recent Videos</a>
+        <img style="float: right;" *ngIf="loading" src='../../assets/images/loading.gif' />
+      </h1>
+    </div>
     <div class="ui divider"></div>
   </div>
   <div class="row">
-    <div class="ui grid">
-      <app-search-result
-        *ngFor="let result of results"
-        [result]="result">
-      </app-search-result>
-    </div>
+    <app-search-result *ngFor="let result of results" [result]="result" class="column"></app-search-result>
+
   </div>
 </div>

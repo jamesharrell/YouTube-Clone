@@ -1,15 +1,16 @@
-<div class="three wide column">
-
-  <div class="caption">
-    <h5>{{result.title}}</h5>
-    <a [routerLink]="[result.videoUrl]" class="btn btn-default" role="button">
-      <div class="thumbnail">
-        <img src="./../../assets/images/test.jpg">
-      </div>
-    </a>
+<a [routerLink]="[result.videoUrl]" class="btn btn-default" role="button">
+  <div class="thumbnail">
+    <img src="./../../assets/images/test.jpg">
+  </div>
+</a>
+<strong><div style="font-family:helvetica">{{result.title}}</div></strong>
+<div class="ui two column grid">
+  
+  <div class="column">
+      
+          <div class="column"></div>
     <a class="ui image label">
-      <img src="./../../assets/images/male-avatar-1.png">
-      {{result.username}}
+      <img src="./../../assets/images/male-avatar-1.png"> {{result.username}}
     </a>
     <div class="ui label">
       views
@@ -17,3 +18,4 @@
     </div>
   </div>
 </div>
+<br>
