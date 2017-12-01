@@ -21,13 +21,19 @@ import { LoginComponent } from './login/login.component';
 
 import { LoggedInGuard } from './logged-in.guard';
 import { AUTH_PROVIDERS } from './auth.service';
-
+import { VideoUploadComponent } from './video-upload/video-upload.component';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   {
     path: 'home',
     component: ListVideosComponent,
     data: { title: 'Home Page' },
+    canActivate: [ LoggedInGuard ]
+  },
+  {
+    path: 'upload',
+    component: VideoUploadComponent,
+    data: { title: 'Vide Upload' },
     canActivate: [ LoggedInGuard ]
   },
   {
@@ -53,6 +59,7 @@ const appRoutes: Routes = [
     SearchResultComponent,
     SearchBarComponent,
     LoginComponent,
+    VideoUploadComponent,
   ],
   imports: [
     BrowserModule,
