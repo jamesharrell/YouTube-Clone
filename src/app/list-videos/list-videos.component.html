@@ -1,4 +1,5 @@
 <div class="ui three column grid">
+  <div class="column"></div>
   <div class="row">
     <app-search-bar></app-search-bar>
   </div>
@@ -9,10 +10,8 @@
         <img style="float: right;" *ngIf="loading" src='../../assets/images/loading.gif' />
       </h1>
     </div>
-    <div class="ui divider"></div>
   </div>
-  <div class="row">
-    <app-search-result *ngFor="let result of results" [result]="result" class="column"></app-search-result>
-
-  </div>
+  <div class="column"></div>
+  <div class="column"></div>
+  <app-search-result *ngFor="let result of results" [result]="result" class="column"></app-search-result>
 </div>

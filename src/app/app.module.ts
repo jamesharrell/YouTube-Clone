@@ -18,7 +18,6 @@ import { youTubeSearchInjectables } from './list-videos/list-videos.injectables'
 import { HttpModule} from '@angular/http';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { LoginComponent } from './login/login.component';
-import { ProtectedComponent } from './protected/protected.component';
 
 import { LoggedInGuard } from './logged-in.guard';
 import { AUTH_PROVIDERS } from './auth.service';
@@ -41,11 +40,6 @@ const appRoutes: Routes = [
     path: 'login', 
     component: LoginComponent
   },
-  {
-    path: 'protected',
-    component: ProtectedComponent,
-    canActivate: [ LoggedInGuard ]
-  },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -59,7 +53,6 @@ const appRoutes: Routes = [
     SearchResultComponent,
     SearchBarComponent,
     LoginComponent,
-    ProtectedComponent,
   ],
   imports: [
     BrowserModule,

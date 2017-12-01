@@ -1,13 +1,17 @@
 <div class="ui container">
   <div class="ui equal width grid">
     <div class="row">
-      <div class="ui red fixed inverted menu">
+      <div class="ui fixed inverted menu">
         <div class="ui container">
           <a [routerLink]="['/home']" class="item">
             <img class="logo" src="assets/images/Yt2logo.png">
           </a>
-          <a [routerLink]="['/profile']" class="item">Profile</a>
-          <a [routerLink]="['/about']" class="item">About</a>
+          <a [routerLink]="['/home']" class="item">
+            <i class="home icon"></i>
+            Home</a>
+          <a [routerLink]="['/upload']" class="item">
+              <i class="cloud upload icon"></i>
+            Upload</a>
         </div>
       </div>
     </div>
