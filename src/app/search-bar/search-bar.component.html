@@ -1,3 +1,17 @@
-<div class="ui search" style="padding-left: 5px" (click)="onSelection()" (keyup)="onTyping()">
-  <input class="prompt" type="text" placeholder="Search for videos..." style="height: 70%; margin-top: 2px">
-</div>
+<div class="ui three column grid container">
+  <div class="column"></div>
+  <div class="column">
+    <form class="ui raised small form segment">
+      <div class="ui grid container">
+        <div class="wide column">
+          <div class="ui search" (click)="onSelection()" (keyup)="onTyping()">
+            <div class="ui fluid icon input">
+              <input class="prompt" type="text" id="college" placeholder="Search for videos...">
+              <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

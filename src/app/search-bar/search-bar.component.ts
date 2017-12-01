@@ -39,7 +39,9 @@ export class SearchBarComponent implements OnInit {
     this.shouldSearch = true;
   }
   onSelection() {
+    console.log('in onSelection');
     if (this.shouldSearch) {
+      console.log('passed the IF');
       this.videoSelection = $('.ui.search').search('get result');
       console.log(this.videoSelection);
       this.router.navigate(['/video/', this.videoSelection.id]);

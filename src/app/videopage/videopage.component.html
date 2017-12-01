@@ -1,15 +1,40 @@
-<div class="row"></div>
-<div class="row" *ngIf="results">
-  <div class="ui two column centered grid">
+<div class="ui one column centered grid" *ngIf="results">
+    <div class="row"></div>
+    <div class="ui huge message">{{results[videoID-1].title}}</div>
     <div class="column">
-      <h5 style="text-align: center; font-size: 50px">{{results[videoID-1].title}}</h5>
-      <app-video-player [videoID]="videoID"></app-video-player>
-      <br>
-      <i class="calendar icon" style="padding: 10px"></i> October 27, 2017
-      <i class="id badge icon" style="padding: 10px"></i> {{results[videoID-1].username}}
-      <br>
-      <br>
-      {{results[videoID-1].description}}
+        <app-video-player [videoID]="videoID"></app-video-player>
+        <div class="row">
+            <div class="ui icon message">
+                <i class="tv icon"></i>
+                <div class="content">
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <a class="ui image label">
+                                <img src="./../../assets/images/male-avatar-1.png"> {{results[videoID-1].username}}
+                            </a>
+                            <div class="ui label">
+                                views
+                                <div class="detail">{{results[videoID-1].playCount}}</div>
+                            </div>
+                        </div>
+
+                        <div class="column"></div>
+                        <div class="column"></div>
+                        <div class="column"></div>
+                        <div class="column">
+                            <div class="ui right labeled button" tabindex="0">
+                                <div class="ui tiny red button">
+                                    <i class="heart icon"></i> Like
+                                </div>
+                                <a class="ui basic red left pointing label">
+                                    {{results[videoID-1].playCount}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <p>{{results[videoID-1].description}}</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
