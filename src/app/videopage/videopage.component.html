@@ -1,6 +1,8 @@
 <div class="ui one column centered grid" *ngIf="results">
     <div class="row"></div>
-    <div class="ui huge message">{{results[videoID-1].title}}</div>
+    <div style="font-family:helvetica; font-size:160%">
+        {{results[videoID-1].title}}
+    </div>
     <div class="column">
         <app-video-player [videoID]="videoID"></app-video-player>
         <div class="row">
